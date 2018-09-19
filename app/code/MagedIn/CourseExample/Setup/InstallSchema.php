@@ -10,6 +10,9 @@ use Magento\Framework\DB\Ddl\Table as DBTable;
 class InstallSchema implements InstallSchemaInterface
 {
     
+    const TABLE = 'magedin_course_examples';
+    
+    
     /**
      * @param SchemaSetupInterface   $setup
      * @param ModuleContextInterface $context
@@ -22,7 +25,7 @@ class InstallSchema implements InstallSchemaInterface
         
         /** @var \Magento\Framework\DB\Ddl\Table $table */
         $table = $setup->getConnection()->newTable(
-            $setup->getTable('magedin_course_examples')
+            $setup->getTable(self::TABLE)
         )->addColumn(
             'id',
             DBTable::TYPE_SMALLINT,
