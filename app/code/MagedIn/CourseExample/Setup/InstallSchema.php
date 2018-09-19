@@ -22,6 +22,9 @@ class InstallSchema implements InstallSchemaInterface
     public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
         $setup->startSetup();
+    
+        /** Let's drop the table before trying installing it. */
+        $setup->getConnection()->dropTable($setup->getTable(self::TABLE));
         
         /** @var \Magento\Framework\DB\Ddl\Table $table */
         $table = $setup->getConnection()->newTable(
