@@ -5,6 +5,7 @@ namespace MagedIn\CourseExample\Setup;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\UpgradeDataInterface;
+use MagedIn\CourseExample\Api\Data\ExampleInterface;
 
 class UpgradeData implements UpgradeDataInterface
 {
@@ -22,7 +23,7 @@ class UpgradeData implements UpgradeDataInterface
                 'random' => '35',
             ];
             
-            $setup->getConnection()->insert(\MagedIn\CourseExample\Setup\InstallSchema::TABLE, $data);
+            $setup->getConnection()->insert(ExampleInterface::TABLE, $data);
         }
         
         if (version_compare($context->getVersion(), '2.0.2' , '==') &&
@@ -33,7 +34,7 @@ class UpgradeData implements UpgradeDataInterface
                 'random' => '37',
             ];
     
-            $setup->getConnection()->insert(\MagedIn\CourseExample\Setup\InstallSchema::TABLE, $data);
+            $setup->getConnection()->insert(ExampleInterface::TABLE, $data);
         }
     }
 }

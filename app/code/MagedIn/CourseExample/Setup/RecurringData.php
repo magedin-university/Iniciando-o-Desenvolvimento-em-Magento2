@@ -5,6 +5,7 @@ namespace MagedIn\CourseExample\Setup;
 use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
+use MagedIn\CourseExample\Api\Data\ExampleInterface;
 
 class RecurringData implements InstallDataInterface
 {
@@ -20,7 +21,7 @@ class RecurringData implements InstallDataInterface
         $bind = ['random' => rand(1000,9999)];
         $setup->getConnection()
             ->update(
-                \MagedIn\CourseExample\Setup\InstallSchema::TABLE,
+                ExampleInterface::TABLE,
                 $bind,
                 'name = "Tiago"'
             );

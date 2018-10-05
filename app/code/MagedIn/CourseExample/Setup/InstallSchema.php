@@ -6,6 +6,7 @@ use Magento\Framework\Setup\InstallSchemaInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\SchemaSetupInterface;
 use Magento\Framework\DB\Ddl\Table as DBTable;
+use MagedIn\CourseExample\Api\Data\ExampleInterface;
 
 class InstallSchema implements InstallSchemaInterface
 {
@@ -24,11 +25,11 @@ class InstallSchema implements InstallSchemaInterface
         $setup->startSetup();
     
         /** Let's drop the table before trying installing it. */
-        $setup->getConnection()->dropTable($setup->getTable(self::TABLE));
+        $setup->getConnection()->dropTable($setup->getTable(ExampleInterface::TABLE));
         
         /** @var \Magento\Framework\DB\Ddl\Table $table */
         $table = $setup->getConnection()->newTable(
-            $setup->getTable(self::TABLE)
+            $setup->getTable(ExampleInterface::TABLE)
         )->addColumn(
             'id',
             DBTable::TYPE_SMALLINT,

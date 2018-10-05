@@ -6,6 +6,7 @@ use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\SchemaSetupInterface;
 use Magento\Framework\Setup\UpgradeSchemaInterface;
 use Magento\Framework\DB\Ddl\Table as DBTable;
+use MagedIn\CourseExample\Api\Data\ExampleInterface;
 
 class UpgradeSchema implements UpgradeSchemaInterface
 {
@@ -35,7 +36,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
     {
         $setup->getConnection()
             ->addColumn(
-                $setup->getTable(\MagedIn\CourseExample\Setup\InstallSchema::TABLE),
+                $setup->getTable(ExampleInterface::TABLE),
                 'lastname',
                 [
                     'nullable' => false,
@@ -57,7 +58,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
     {
         $setup->getConnection()
             ->addColumn(
-                $setup->getTable(\MagedIn\CourseExample\Setup\InstallSchema::TABLE),
+                $setup->getTable(ExampleInterface::TABLE),
                 'random',
                 [
                     'nullable' => false,

@@ -5,6 +5,7 @@ namespace MagedIn\CourseExample\Api\Data;
 interface ExampleInterface
 {
     
+    const TABLE    = 'magedin_course_examples';
     const NAME     = 'name';
     const LASTNAME = 'lastname';
     const RANDOM   = 'random';

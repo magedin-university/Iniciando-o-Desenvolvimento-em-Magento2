@@ -19,8 +19,7 @@ class Example extends AbstractModel implements ExampleInterface
      */
     protected function _construct()
     {
-        /** @todo Call the init method here... */
-        // $this->_init();
+        $this->_init(\MagedIn\CourseExample\Model\ResourceModel\Example::class);
     }
     
     /**

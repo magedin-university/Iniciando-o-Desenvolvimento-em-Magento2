@@ -5,6 +5,7 @@ namespace MagedIn\CourseExample\Setup;
 use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
+use MagedIn\CourseExample\Api\Data\ExampleInterface;
 
 class InstallData implements InstallDataInterface
 {
@@ -23,7 +24,7 @@ class InstallData implements InstallDataInterface
             'random' => 1
         ];
     
-        $setup->getConnection()->insert(\MagedIn\CourseExample\Setup\InstallSchema::TABLE, $data);
+        $setup->getConnection()->insert(ExampleInterface::TABLE, $data);
         
         $setup->endSetup();
     }
