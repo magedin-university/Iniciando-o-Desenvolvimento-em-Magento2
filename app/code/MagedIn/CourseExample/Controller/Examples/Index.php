@@ -17,7 +17,6 @@ class Index extends \Magento\Framework\App\Action\Action
      */
     public function execute()
     {
-        echo 'It is working!!';
-        die();
+        return '<br/>This is the original message from the controller.';
     }
 }
